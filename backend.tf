@@ -11,7 +11,7 @@ terraform {
   backend "s3" {
     bucket         = "young-minds-terraform-tfstate"
     region         = "us-east-1"
-    key            = "project/terraform.tfstate"
+    key            = "batch-32/terraform.tfstate"
     dynamodb_table = "terraform-lock"   
     encrypt        = true             
   }
