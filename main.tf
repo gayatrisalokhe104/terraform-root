@@ -17,7 +17,7 @@ locals {
 
 # ── VPC ──────────────────────────────────────────────────────────────
 module "vpc" {
-  source = "git::https://github.com/gayatrisalokhe104/terraform-module-vpc.git"
+  source = "git::http://github.com/gayatrisalokhe104/terraform-module-vpc.git"
 
   cidr_block = var.vpc_cidr
   vpc_name   = "${local.name_prefix}-vpc"
@@ -26,7 +26,7 @@ module "vpc" {
 
 # ── Subnets (4 subnets via for_each) ─────────────────────────────────
 module "subnets" {
-  source = "git::https://github.com/gayatrisalokhe104/terraform-module-subnet.git"
+  source = "git::http://github.com/gayatrisalokhe104/terraform-module-subnet.git"
 
   for_each          = var.subnets
   subnet_name       = "${local.name_prefix}-${each.key}"
