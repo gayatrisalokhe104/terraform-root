@@ -8,12 +8,12 @@ terraform {
     }
   }
 
-  # Uncomment for remote state (recommended for teams)
-  # backend "s3" {
-  #   bucket         = "my-terraform-state-bucket"
-  #   key            = "infra/terraform.tfstate"
-  #   region         = "us-east-1"
-  #   dynamodb_table = "terraform-lock"
-  #   encrypt        = true
-  # }
+  backend "s3" {
+    bucket         = "young-minds-terraform-tfstate"
+    region         = "us-east-1"
+    key            = "project/terraform.tfstate"
+    dynamodb_table = "terraform-lock"   
+    encrypt        = true             
+  }
 }
+
